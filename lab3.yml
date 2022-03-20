@@ -1,0 +1,15 @@
+---
+- name: Create a Play
+  hosts: all
+  tasks:
+    - name: Install nmap
+      package:
+        name: nmap
+        state: present
+    - name: Create an archive
+      archive:
+        path: /home
+        dest: /tmp/home.tar.xz
+        format: xz
+...
+      

@@ -1,0 +1,13 @@
+--- #starting a YAML file
+- name: first play #Name of out first   
+  hosts: all #hosts in  where we will do the job
+  tasks: #provided tasks
+    - name: create a new file
+      file:
+#        path: /tmp/foo.conf
+        path: /home/elliot/directory/foo1.txt
+        mode: 0664
+        owner: elliot
+        state: touch
+    
+...

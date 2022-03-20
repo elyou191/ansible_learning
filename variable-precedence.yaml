@@ -1,0 +1,10 @@
+---
+- name: Understanding the precedence variable
+  hosts: all
+  vars: 
+    fav_distro: "Ubuntu" 
+  tasks:
+    - name: Show the value of fav_distro
+      debug:
+        msg: My favourite distribution is {{fav_distro}}
+...

@@ -1,0 +1,11 @@
+---
+- name: Working with External variables
+  hosts: all
+  vars_files: myvars.yml
+  tasks:
+    - name: Show me the first variable
+      debug:
+        msg: The content of the first variable {{port_nums}}
+    - name: Show me the UID of the Bob user
+      debug:
+        msg: UID is {{users.bob.uid}}

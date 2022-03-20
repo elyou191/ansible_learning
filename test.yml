@@ -1,0 +1,14 @@
+---
+# - name: Include a playbook
+#  include: first-playbook.yml
+- name: First playbook
+  hosts: all
+  tasks:
+    - name: Create a folder
+      file:
+        path: /home/elliot/new-directory1
+        mode: 0664 # drw-rw-r--
+        owner: elliot
+        state: directory
+...
+

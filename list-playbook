@@ -1,0 +1,22 @@
+---
+- name: Working with lists
+  hosts: node2
+  vars:
+    port_nums: [15,2,99]
+    users:
+      bob:
+        username: bob
+        uid: 1122
+        shell: /bin/bash
+      lisa:
+        username: lisa
+        uid: 2233
+        shell: /bin/sh
+  tasks: 
+    - name: Show me the port list
+      debug:
+        msg: All the ports {{ port_nums[1] }}
+    - name: Show me a user
+      debug:        
+        msg: "{{users.lisa.username}}"
+...

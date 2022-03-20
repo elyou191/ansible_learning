@@ -1,0 +1,4 @@
+---
+- name: create groups
+  include: group-tasks.yml
+...
