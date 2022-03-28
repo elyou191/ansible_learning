@@ -9,10 +9,10 @@
   tasks:
     - name: Add the user 'Matt' with a specific uid and a primary group of 'sudo'
       ansible.builtin.user:
-        name: "{{ credential[0] }}"
+        name: "{{ credential.name }}"
         comment: matt_ata
         group: "{{ group[0] }}"
-        password: "{{ credential[1] }}"
-        shell: "{{ credential[2] }}"
+        password: "{{ credential.password }}"
+        shell: "{{ credential.shell }}"
         createhome: yes     # Defaults to yes
-        home: /home/{{ credential[0] }}    # Defaults to /home/<username>
+        home: /home/{{ credential.name }}    # Defaults to /home/<username>
