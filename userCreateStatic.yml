@@ -1,0 +1,8 @@
+- name: Create user on a linux server
+  hosts: all
+  become: yes
+  gather_facts: false
+  vars:
+    - user: elliot1
+    - password: 0123456789
+    - shell: /bin/bash 
