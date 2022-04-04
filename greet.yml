@@ -1,0 +1,11 @@
+---
+- name: Greet the user
+  hosts: all
+  vars_prompt:
+    - name: username
+      prompt: What's your name?
+      private: yes # we can see the input on the screen
+  tasks:
+    - name: Greet the user
+      debug:
+        msg: Hello {{ username }} 
