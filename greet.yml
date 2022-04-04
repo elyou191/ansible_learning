@@ -1,6 +1,6 @@
 ---
 - name: Greet the user
-  hosts: all
+  hosts: server1
   vars_prompt:
     - name: username
       prompt: What's your name?
