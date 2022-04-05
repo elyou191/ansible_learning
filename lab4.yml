@@ -1,0 +1,16 @@
+---
+- name: Playbook
+  hosts: server1
+  tasks: 
+    - name: Run the free -h command
+      command: free -h
+      register: server_free
+    - name: Inspect the server_uptime variable
+      debug:
+        var: server_free
+    - name: Show the ouput
+      debug:
+        msg: "{{ server_free.stdout_lines }}"
+    - name: Display the IPv4
+      debug:  
+        msg: IPv4 address is {{ ansible_facts.default_ipv4.address }} 

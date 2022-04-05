@@ -1,0 +1,13 @@
+---
+- name: Register playbook
+  hosts: server1
+  tasks:
+    - name: Run a command 
+      command: uptime
+      register: server_uptime
+#    - name: Inspect the server_uptime variable
+#      debug: 
+#        var: server_uptime
+    - name: Show the server uptime
+      debug:
+        msg: "{{ server_uptime.stdout }}"
