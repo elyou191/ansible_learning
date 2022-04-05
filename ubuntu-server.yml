@@ -1,0 +1,8 @@
+---
+- name: Using when with facts
+  hosts: server1
+  tasks:
+    - name: Detect the Ubuntu distr
+      debug: 
+        msg: "This is a Ubuntu Server"
+      when: ansible_facts['distribution']=="Ubuntu"

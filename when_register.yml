@@ -1,0 +1,11 @@
+---
+- name: Using when with registers
+  hosts: server1
+  tasks:
+    - name: Save the contents of /etc/os-release
+      command: cat /etc/os-release
+      register: os_release
+    - name: Detect Ubunbu server
+      debug:
+        msg: "Running Ubuntu ..."
+      when: os_release.stdout.find('Ubuntu') != -1
