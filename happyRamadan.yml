@@ -1,0 +1,14 @@
+---
+- name: Run Playbook
+  hosts: node1
+  tasks: 
+    - name: Ten second countdown
+      debug: 
+        msg: "{{10-item}} second remaining ..."
+      loop: "{{ range(10) | list }}"
+      loop_control: 
+        pause: 1
+    - name: Display the message
+      debug: 
+        msg: "Ramadan Moubarak"
+

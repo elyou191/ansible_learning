@@ -1,0 +1,8 @@
+---
+- name: Loop playbook
+  hosts: server1
+  tasks:
+    - name: Range Loop
+      debug: 
+        msg: "192.168.1.{{ item }}"
+      loop: "{{ range(0,256,2) | list }}" 
