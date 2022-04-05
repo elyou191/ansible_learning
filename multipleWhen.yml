@@ -1,0 +1,10 @@
+- name: Multiple when
+  hosts: server1
+  tasks:
+    - name: Reboot CentOS and RedHat Servers
+      debug:                                                  
+        msg: "This is a Ubuntu server ..."
+      when: >
+        ansible_facts['distribution'] == "CentOS" or
+        ansible_facts['distribution'] == "Ubuntu"
+
