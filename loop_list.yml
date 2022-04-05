@@ -1,0 +1,10 @@
+---
+- name: print list
+  hosts: server1
+  vars: 
+    prime: [2,3,5,7,11,13]
+  tasks:
+    - name: show the list content
+      debug: 
+        msg: "{{ item }}"
+      loop: "{{ prime }}"

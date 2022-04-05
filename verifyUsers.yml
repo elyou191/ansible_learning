@@ -1,0 +1,10 @@
+---
+- name: Verify the users
+  hosts: server1
+  tasks:
+    - name: Register the content of the /etc/passwd
+      command: tail -n 3 /etc/passwd
+      register: verify
+    - name: Show the content 
+      debug:
+        msg: "{{ verify.stdout_lines }}" 
