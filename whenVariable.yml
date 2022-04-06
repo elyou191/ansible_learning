@@ -1,0 +1,11 @@
+---
+- name: when with variable
+  hosts: server1
+  vars:
+    week: true
+    on_call: "no"
+  tasks:
+    - name: Run if "week" is true and "on_call" is false
+      debug:
+        msg: "You are free"
+      when: week and not on_call | bool
