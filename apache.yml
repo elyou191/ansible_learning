@@ -3,10 +3,6 @@
   tasks:
     - name: Install and start Apache
       block:
-#        - name: Update Cache
-#          apt:
-#           update_cache: yes
-#           force_apt_get: yes  
         - name: Install apache
           apt:
             name: apache2
