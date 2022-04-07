@@ -1,0 +1,19 @@
+---
+- name: Handling failure with blocks on a Playbook
+  hosts: server1
+  tasks: 
+    - name: Handling error example
+      block:
+        - name: Run a command
+          command: uptime
+        - name: run a bad command
+          command: blabla
+          ignore_errors: yes
+        - name: This task will not run 
+          debug:
+            msg: "I never run because the above task failed"
+      rescue: 
+        - name: Runs when the block failed
+          debug:
+            msg: "Block failed; lets try to fix it ..."
+
