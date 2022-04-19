@@ -1,0 +1,12 @@
+---
+- name: Ping & Display Playbook
+  hosts: localhost
+  tasks:
+    - name: Ping Command
+      ping:
+
+    - name: Display the details of the two text
+      find: 
+        path: /root/ansible_learning
+        file_type: file
+

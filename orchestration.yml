@@ -1,0 +1,15 @@
+---
+- name: Orchestrate with Ansible
+  hosts: all
+  strategy: free
+#  serial: 1
+  tasks:
+    - name: Update the packages
+      apt:
+        update_cache: yes
+    - name: Verify/Install Git
+      apt:
+        name: git
+        state: present
+
+ 
